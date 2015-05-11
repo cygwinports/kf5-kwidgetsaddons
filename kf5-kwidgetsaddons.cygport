@@ -1,0 +1,26 @@
+inherit kf5
+
+NAME="kf5-kwidgetsaddons"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 widgets library"
+DESCRIPTION="This repository contains add-on widgets and classes for
+applications that use the Qt Widgets module. If you are porting applications
+from KDE Platform 4 kdeui library, you will find many of its classes here."
+
+PKG_NAMES="libKF5WidgetsAddons5 libKF5WidgetsAddons-devel"
+libKF5WidgetsAddons5_CONTENTS="
+	usr/bin/cygKF5WidgetsAddons-5.dll
+	usr/share/doc/
+	usr/share/kf5/kcharselect/
+	usr/share/locale/
+"
+libKF5WidgetsAddons_devel_REQUIRES="libQt5Core-devel libQt5Gui-devel"
+libKF5WidgetsAddons_devel_CONTENTS="
+	usr/include/KF5/KWidgetsAddons/
+	usr/include/KF5/kwidgetsaddons_version.h
+	usr/lib/cmake/KF5WidgetsAddons/
+	${QT5_MKSPECSDIR#/}/modules/qt_KWidgetsAddons.pri
+	usr/lib/libKF5WidgetsAddons.dll.a
+"
