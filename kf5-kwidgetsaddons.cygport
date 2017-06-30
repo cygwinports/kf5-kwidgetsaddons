@@ -1,7 +1,7 @@
-inherit kf5
+inherit kf5 python2 python3
 
 NAME="kf5-kwidgetsaddons"
-VERSION=5.27.0
+VERSION=5.35.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 widgets library"
@@ -9,7 +9,9 @@ DESCRIPTION="This repository contains add-on widgets and classes for
 applications that use the Qt Widgets module. If you are porting applications
 from KDE Platform 4 kdeui library, you will find many of its classes here."
 
-PKG_NAMES="libKF5WidgetsAddons5 libKF5WidgetsAddons-devel"
+PATCH_URI="5.32.0-sip.patch"
+
+PKG_NAMES="libKF5WidgetsAddons5 libKF5WidgetsAddons-devel python2-pykf5-kwidgetsaddons python3-pykf5-kwidgetsaddons"
 libKF5WidgetsAddons5_CONTENTS="
 	usr/bin/cygKF5WidgetsAddons-5.dll
 	usr/share/doc/
@@ -23,4 +25,7 @@ libKF5WidgetsAddons_devel_CONTENTS="
 	usr/lib/cmake/KF5WidgetsAddons/
 	${QT5_MKSPECSDIR#/}/modules/qt_KWidgetsAddons.pri
 	usr/lib/libKF5WidgetsAddons.dll.a
+	usr/share/sip/PyKF5/KWidgetsAddons/
 "
+python2_pykf5_kwidgetsaddons_CONTENTS="${PYTHON2_SITELIB#/}/PyKF5/KWidgetsAddons.dll"
+python3_pykf5_kwidgetsaddons_CONTENTS="${PYTHON3_SITELIB#/}/PyKF5/KWidgetsAddons.dll"

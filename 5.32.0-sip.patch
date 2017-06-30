@@ -1,0 +1,10 @@
+--- origsrc/kwidgetsaddons-5.32.0/src/CMakeLists.txt	2017-03-04 10:21:56.000000000 -0600
++++ src/kwidgetsaddons-5.32.0/src/CMakeLists.txt	2017-03-27 01:32:13.815152500 -0500
+@@ -233,7 +233,6 @@ if (PythonModuleGeneration_FOUND)
+       kviewstateserializer.h
+       kviewstatemaintainerbase.h
+       keditlistwidget.h
+-      kcursor.h
+       kratingpainter.h
+       kratingwidget.h
+       kactionselector.h
